@@ -6,9 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Scanner;
-
-import org.openqa.selenium.WebElement;
 
 public class Databaseactions {
 		private static final String db = "jdbc:mysql://localhost:3306/amazon";
