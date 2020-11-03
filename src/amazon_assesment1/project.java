@@ -11,15 +11,21 @@ public class project {
 	public static void main(String args[]) throws Exception {
 	System.setProperty("webdriver.chrome.driver","/home/deepakraja4sund/Downloads/chromedriver");
 	WebDriver driver = new ChromeDriver();
+	
 	//calling the website
 	driver.get("https://www.amazon.in/");
-	Takescreenshot.takeSnapShot(driver, "/home/deepakraja4sund/Downloads/assesment/test1.png");
-	driver.findElement(By.id("nav-hamburger-menu")).click();
-	//calling Database function for update and retrieve data
-	Databaseactions db1= new Databaseactions();
+	Takescreenshot.takeSnapShot(driver, "/home/deepakraja4sund/Downloads/assesment/amazonhome.png");
+	
+	//Navigating to the mobile category
+	driver.findElement(By.id("nav-hamburger-menu")).click();	
 	driver.findElement(By.linkText("Mobiles, Computers")).click();
+	Takescreenshot.takeSnapShot(driver, "/home/deepakraja4sund/Downloads/assesment/mobilecategories.png");
+	
+	//adding to the web elements to the list
 	List<WebElement> links = driver.findElements(By.xpath("//a[@class='hmenu-item']"));
 	
+	//calling Database function for update and retrieve data
+	Databaseactions db1= new Databaseactions();
 	for (WebElement webElement : links)
 	 {
 		 
